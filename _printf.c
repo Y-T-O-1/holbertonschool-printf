@@ -9,6 +9,7 @@
 int (*check_format(const char *format))(va_list)
 {
 	int i = 0;
+    /* Initiliazes an array of print_t structures */
 	print_t p[] = {
         {"c", print_c},
         {"s", print_s},
@@ -16,12 +17,12 @@ int (*check_format(const char *format))(va_list)
         {NULL, NULL}
     };
 
-    for (; p[i].t != NULL; i++)
+    for (; p[i].t != NULL; i++) /* t = pointer to char(string) */
 	{
 		if (*(p[i].t) == *format)
 			break;
 	}
-	return (p[i].f);
+	return (p[i].f); /* f =  represents function pointer stored */
 }
 
 /**
