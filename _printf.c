@@ -9,10 +9,12 @@
 
 int (*check_format(const char *format))(va_list)
 {
-	int i = 0;
+    int i = 0;
+
     /* Initiliazes an array of print_t structures */
-    
-	print_t p[] = {
+
+	print_t p[] =
+    {
         {"c", print_c},
         {"s", print_s},
         {"percent", print_percent},
@@ -30,7 +32,7 @@ int (*check_format(const char *format))(va_list)
 /**
  * _printf - Function that mimics printf
  * @format: a string
- * Return: 
+ * Return:
 */
 
 int _printf(const char *format, ...)
@@ -43,8 +45,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(ap, format); /* Initializes ap to point to first arg */
-	while (format && format[i]) 
-    /* Starts a loop that iterates through each char */
+	while (format && format[i]) /* Starts the loop */
 	{
 		if (format[i] != '%') /* Checks if current char is not % */
 		{
@@ -64,10 +65,9 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				f = check_format(&format[i + 1]); 
-                /* Checks if current char is a valid format specifier */
+				f = check_format(&format[i + 1]); /* Checks char for valid format specifier */
 				if (f == NULL)
-					return (-1);
+                    return (-1);
 				i += 2;
 				counter += f(ap);
 				continue;
