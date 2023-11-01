@@ -2,35 +2,6 @@
 #include <stdarg.h>
 
 /**
- * chech_format - Checks if there is a valid format specifier.
- * @format: Possible valid format specifier
- * Return: Pointer to vallid function or NULL
-*/
-
-int (*check_format(const char *format))(va_list)
-{
-    int i = 0
-    print_t p[] = { /* Initializes an array of print_f structures named p*/
-        {"c", print_c},
-        {"s", print_s},
-        {"percent" print_percent},
-        {NULL, NULL}
-    };
-
-    for (; p[i].t != NULL; i++) /* t is a pointer to a character (string) */
-    {
-        if (*(p[i].t) == *format)
-            break;
-    }
-    return (p[i].f); /* f is where the pointer is stored */
-}
-
-
-
-
-
-
-/**
  * _printf - Function that mimics printf
  * @format: a string
  * Return: 
