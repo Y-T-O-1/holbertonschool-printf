@@ -9,7 +9,7 @@
 int print_s(va_list s)
 {
 	/* Set our parameters*/
-	int i;
+	int i = 0;
 	char *str;
 
 	str = va_arg(s, char*);
@@ -17,8 +17,11 @@ int print_s(va_list s)
 	if (str == NULL)
 		str = "(null)";
 	
-	for (i = 0 ; str[i] != '\0'; i++)
+	while (str[i] != '\0') 
+	{
 		_putchar(str[i]);
+		i++;
+	}
+return i;
 
-		return (i);
 }
