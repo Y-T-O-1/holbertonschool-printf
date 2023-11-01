@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
  * print_s - prints a string
@@ -9,19 +10,12 @@
 int print_s(va_list s)
 {
 	/* Set our parameters*/
+	char *str = va_arg(s, char *);
 	int i = 0;
-	char *str;
 
-	str = va_arg(s, char*);
-	/* Check if str is null, if it is print null */
 	if (str == NULL)
 		str = "(null)";
-	
-	while (str[i] != '\0') 
-	{
-		_putchar(str[i]);
-		i++;
-	}
-return i;
-
+	while (str[i])
+		_putchar(str[i++]);
+	return (i);
 }
