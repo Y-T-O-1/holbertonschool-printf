@@ -2,6 +2,7 @@
 #define MAIN_H
 
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
  * struct print - Structure to store format specifier and handling function.
@@ -15,13 +16,10 @@ typedef struct print
     int (*f)(va_list);
 } print_t;
 
-/**
- * _printf - Produces output according to format.
- * @format: A character string containing zero or more directives.
- * 
- * Return: The number of characters printed.
-*/
-
 int _printf(const char *format, ...);
+int _putchar(char c);
+int print_s(va_list s);
+int print_c(va_list c);
+int print_percent(va_list percent);
 
 #endif /* MAIN_H */
