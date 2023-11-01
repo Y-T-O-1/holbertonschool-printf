@@ -19,5 +19,6 @@ int print_s(va_list s)
 	
 	for (i = 0 ; str[i] != '\0'; i++)
 		_putchar(str[i]);
+
 		return (i);
 }
