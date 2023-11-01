@@ -2,17 +2,17 @@
 
 /**
  * print_s - prints a string
- * @arg: argument list
- * @Return: Our return value
+ * @s: argument list
+ * @Return: Always 1 (Unless it's not)
 */
 
-int print_s(va_list arg)
+int print_s(va_list s)
 {
 	/* Set our parameters*/
 	int i;
 	char *str;
 
-	str = va_arg(arg, char*);
+	str = va_arg(s, char*);
 	/* Check if str is null, if it is print null */
 	if (str == NULL)
 		str = "(null)";
