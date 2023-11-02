@@ -26,6 +26,11 @@ int (*check_format(const char *format))(va_list)
     return (NULL);
 }
 
+int handle_format(const char **format, va_list ap, int *index)
+{
+    return 0;
+}
+
 /**
  * _printf - Function that mimics printf
  * @format: a string
