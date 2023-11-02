@@ -4,7 +4,7 @@
 /**
  * print_s - Prints string
  * @s: Arguments
- * @Return: String
+ * @Return: i
 */
 
 int print_s(va_list s)
