@@ -29,7 +29,7 @@ for (; p[i].t != NULL; i++) /* t = pointer to char(string) */
  * @format: a string
  * Return:
 */
-int _printf(const char *format, ...)
+int _printf(const char *format, ...) /* Function implementation */
 {
 	va_list ap; /* Used to acces variable arguments */
 	int (*f)(va_list); /* Stores the adderss of a function */
