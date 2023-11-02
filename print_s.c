@@ -6,7 +6,6 @@
 * @s: Arguments
 * @Return: Number of char printed
 */
-
 int print_s(va_list s)
 {
 	char *str = va_arg(s, char *);
