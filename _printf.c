@@ -57,6 +57,10 @@ int _printf(const char *format, ...)
                 counter++;
                 i++;
             }
+            else if (format[i + 1] == '\0')
+            {
+                return counter;
+            }
             else
             {
                 int (*f)(va_list) = check_format(&format[i + 1]);
