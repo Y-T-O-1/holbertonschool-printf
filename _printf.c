@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int i, counter = 0;
 
-	if (format == NULL)
+	if (format == NULL && format[i] == '%')
 		return (-1);
 
 	va_start(ap, format);
@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == '\0')
 		{
-			return (0);
+			return (-1);
 		}
 		else
 		{
