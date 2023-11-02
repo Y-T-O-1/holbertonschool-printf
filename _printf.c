@@ -30,7 +30,8 @@ for (; p[i].t != NULL; i++) /* t = pointer to char(string) */
  * Return:
 */
 int _printf(const char *format, ...)
-{ /* Function implementation */
+{ 
+    /* Function implementation */
 	va_list ap; /* Used to acces variable arguments */
 	int (*f)(va_list); /* Stores the adderss of a function */
 	unsigned int i = 0, counter = 0; /* Keeps track of current position */
