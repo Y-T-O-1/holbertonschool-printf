@@ -55,11 +55,6 @@ int _printf(const char *format, ...)
                 counter++;
                 i++;
             }
-            else if (format[i + 1] == '\0' && format[i] == '%')
-            {
-                _putchar('%');
-                counter++;
-            }
             else
             {
                 int (*f)(va_list) = check_format(&format[i + 1]);
@@ -67,6 +62,20 @@ int _printf(const char *format, ...)
                 {
                     _putchar(format[i]);
                     counter++;
+                }
+                else if (format[i + 1] == 's')
+                {
+                    char *s = va_arg(ap, char *);
+                    int length = strlen(s);
+                    if (length == 1 && s[0] == '%')
+                    {
+                        return (NULL);
+                    }
+                    else
+                    {
+                        counter += f(ap);
+                        i++;
+                    }
                 }
                 else
                 {
