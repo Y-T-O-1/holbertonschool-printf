@@ -1,4 +1,27 @@
 
+# _printf Project
+
+**Author: Kyle Headley and Benjamin Carter**
+
+
+
+
+## Description
+This Project was a mini-recreation of printf. 
+
+
+
+
+## Features
+
+The _printf() function can handle the following conversion specifiers:
+* %c: Characters
+* %s: Strings
+* %%: Percent sign
+* Additional specifiers can be easily integrated by adding to the print_t array.
+* The function manages a variable number of arguments using the standard C stdarg.h library.
+
+
 ## File List
 
 ### _printf.c
