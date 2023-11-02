@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdarg.h>
-#include <stdbool.h>
 
 /**
  * check_format - checks if there is a valid format specifier
@@ -23,12 +22,10 @@ int (*check_format(const char *format))(va_list)
             return p[i].f;
     }
 
-    return (NULL);
-}
+    if (*format == '%')
+        return print_percent;
 
-int handle_format(const char *format, va_list ap, int *index)
-{
-    return 0;
+    return (NULL);
 }
 
 /**
@@ -40,7 +37,6 @@ int _printf(const char *format, ...)
 {
     va_list ap;
     int i, counter = 0;
-    bool hasNonPercentChar = false;
 
     if (format == NULL)
         return (-1);
@@ -53,7 +49,6 @@ int _printf(const char *format, ...)
         {
             _putchar(format[i]);
             counter++;
-            hasNonPercentChar = true;
         }
         else
         {
@@ -62,7 +57,6 @@ int _printf(const char *format, ...)
                 _putchar('%');
                 counter++;
                 i++;
-                hasNonPercentChar = true;
             }
             else
             {
@@ -71,35 +65,17 @@ int _printf(const char *format, ...)
                 {
                     _putchar(format[i]);
                     counter++;
-                    hasNonPercentChar = true;
                 }
                 else
                 {
                     counter += f(ap);
                     i++;
-                    hasNonPercentChar = true;
-                }
-                while (format && format[i])
-                {
-                    if (format[i] == '%' && format[i + 1] != '\0')
-                    {
-                        counter += handle_format(&format[i], ap, &i);
-                    }
-                    else
-                    {
-                        _putchar(format[i++]);
-                        counter++;
-                    }
                 }
             }
         }
     }
 
     va_end(ap);
-
-    if (!hasNonPercentChar)
-        return (0);
-
     return counter;
 }
 
