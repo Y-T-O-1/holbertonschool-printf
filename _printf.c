@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 			if (format[i] == '%' && format[i + 1] == '%')
 				i++;
 		}
-		else if (format[i + 1] == '\0')
+		else if (format[i] == '%' && format[i + 1] != '%')
 		{
 			return (0);
 		}
@@ -74,6 +74,3 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	return (counter);
 }
-
-
-
