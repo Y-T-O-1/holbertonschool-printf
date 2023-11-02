@@ -33,49 +33,45 @@ int (*check_format(const char *format))(va_list)
 */
 int _printf(const char *format, ...)
 {
-    va_list ap;
-    int i, counter = 0;
-    int percent_count = 0;
+	va_list ap;
+	int i, counter = 0;
 
-    if (format == NULL)
-        return (-1);
+	if (format == NULL)
+		return (-1);
 
-    va_start(ap, format);
+	va_start(ap, format);
 
-    for (i = 0; format[i]; i++)
-    {
-        if (format[i] != '%')
-        {
-            _putchar(format[i]);
-            counter++;
-            if (format[i] == '%' && format[i + 1] == '%')
-                i++;
-            percent_count = 0;
-        }
-        else if (format[i + 1] == '\0')
-        {
-            return (0);
-        }
-        else
-        {
-            int (*f)(va_list) = check_format(&format[i + 1]);
+	for (i = 0; format[i]; i++)
+	{
+		if (format[i] != '%')
+		{
+			_putchar(format[i]);
+			counter++;
+			if (format[i] == '%' && format[i + 1] == '%')
+				i++;
+		}
+		else if (format[i + 1] == '\0')
+		{
+			return (0);
+		}
+		else
+		{
+			int (*f)(va_list) = check_format(&format[i + 1]);
 
-            if (f == NULL)
-            {
-                _putchar(format[i]);
-                counter++;
-                percent_count = 0;
-            }
-            else
-            {
-                counter += f(ap);
-                i++;
-                percent_count = 0;
-            }
-        }
-    }
+			if (f == NULL)
+			{
+				_putchar(format[i]);
+				counter++;
+			}
+			else
+			{
+				counter += f(ap);
+				i++;
+			}
+		}
+	}
 
-    va_end(ap);
-    return (counter);
+	va_end(ap);
+	return (counter);
 }
 
