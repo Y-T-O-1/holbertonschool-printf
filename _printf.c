@@ -48,32 +48,28 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			counter++;
 		}
+		else if (format[i + 1] == '%')
+		{
+			_putchar('%');
+			counter++;
+			i++;
+		}
+		else if (format[i + 1] == '\0')
+		{
+			return (0);
+		}
 		else
 		{
-			if (format[i + 1] == '%')
+			int (*f)(va_list) = check_format(&format[i + 1]);
+			if (f == NULL)
 			{
-				_putchar('%');
+				_putchar(format[i]);
 				counter++;
-				i++;
-			}
-			else if (format[i + 1] == '\0')
-			{
-				return (0);
 			}
 			else
 			{
-				int (*f)(va_list) = check_format(&format[i + 1]);
-
-				if (f == NULL)
-				{
-					_putchar(format[i]);
-					counter++;
-				}
-				else
-				{
-					counter += f(ap);
-					i++;
-				}
+				counter += f(ap);
+				i++;
 			}
 		}
 	}
