@@ -41,15 +41,22 @@ int handle_format(const char *format, va_list ap, unsigned int *i)
 	{  /* Unrecognized format specifier */
 		if (format[1] != '\0')
 		{
-			_putchar(format[1]);
-			(*i) += 2;  /* Skip over the '%' */
-			counter +=1; 
+            if (format[1] == '%')
+            {
+                (*i)++; /* Skip over the '%' */
+            }
+            else
+            {
+                _putchar(format[1]);
+                counter++;
+                (*i) += 2; 
+            } 
 		}
 		else
 		{
 			return (-1);
 		}
-		}
+	}
 	else
 	{  /* Valid format specifier */
 		counter += f(ap);
