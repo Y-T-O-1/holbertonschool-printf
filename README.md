@@ -1,27 +1,4 @@
 
-# _printf Project
-
-**Author: Kyle Headley and Benjamin Carter**
-
-
-
-
-## Description
-This Project was a mini-recreation of printf. 
-
-
-
-
-## Features
-
-The _printf() function can handle the following conversion specifiers:
-* %c: Characters
-* %s: Strings
-* %%: Percent sign
-* Additional specifiers can be easily integrated by adding to the print_t array.
-* The function manages a variable number of arguments using the standard C stdarg.h library.
-
-
 ## File List
 
 ### _printf.c
@@ -58,11 +35,10 @@ int main(void) {
 }
 ```
 
-
-
 </details>
 
 ### _putchar.c
+
 <details>
 <summary>Program Info</summary>
 
@@ -96,6 +72,7 @@ int main(void) {
 </details>
 
 ### print_c
+
 <details>
 <summary>Program Info</summary>
 
@@ -123,6 +100,31 @@ int main(void)
     return 0;
 }
 
+```
+
+</details>
+
+### print_percent
+
+<details>
+<summary>Program Info</summary>
+
+## Program Description
+
+This part of the repository contains the print_percent function, a component of the custom _printf() function, which handles the printing of the percent symbol (%%) in a formatted string.
+
+## Function Description 
+
+#### int print_percent(va_list percent)
+* percent: This parameter is not used since the percent symbol does not require an argument. It is there to maintain the function prototype compatibility with va_list.
+* Returns: Always 1 to indicate one character (%) printed.
+
+### Usage
+
+The print_percent function is implicitly called by the _printf() function whenever the format specifier %% is encountered. It is not designed to be called directly in user code but is instead a utility function for _printf()'s internal operation.
+
+```c
+_printf("Display 100%% completed\n");
 ```
 
 </details>
