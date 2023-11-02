@@ -34,7 +34,7 @@ int (*check_format(const char *format))(va_list)
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int i, counter = 0;
+	int i, counter = 0, percent_counter = 0;
 
 	if (format == NULL)
 		return (-1);
@@ -49,6 +49,7 @@ int _printf(const char *format, ...)
 			counter++;
 			if (format[i] == '%' && format[i + 1] == '%')
 				i++;
+			percent_counter = 0;
 		}
 		else if (format[i + 1] == '\0')
 		{
@@ -62,11 +63,13 @@ int _printf(const char *format, ...)
 			{
 				_putchar(format[i]);
 				counter++;
+				percent_counter = 0;
 			}
 			else
 			{
 				counter += f(ap);
 				i++;
+				percent_counter = 0;
 			}
 		}
 	}
