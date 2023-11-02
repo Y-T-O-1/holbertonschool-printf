@@ -50,12 +50,10 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == '\0')
 		{
-			// This handles the case when '%' is the last character in the string.
 			return (0);
 		}
 		else if (format[i + 1] != '%')
 		{
-			// Skip the lone '%' character without printing anything.
 			i++;
 		}
 		else
