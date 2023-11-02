@@ -22,7 +22,7 @@ int (*check_format(const char *format))(va_list)
             return p[i].f;
     }
 
-    return NULL;
+    return (NULL);
 }
 
 /**
