@@ -60,8 +60,7 @@ int _printf(const char *format, ...)
 
 			if (f == NULL)
 			{
-				_putchar(format[i]);
-				counter++;
+				counter--;
 			}
 			else
 			{
