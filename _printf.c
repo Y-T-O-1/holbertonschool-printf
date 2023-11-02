@@ -63,6 +63,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				int (*f)(va_list) = check_format(&format[i + 1]);
+
 				if (f == NULL)
 				{
 					_putchar(format[i]);
@@ -78,5 +79,5 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(ap);
-	return counter;
+	return (counter);
 }
