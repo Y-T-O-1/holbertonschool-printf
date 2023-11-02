@@ -55,12 +55,17 @@ int _printf(const char *format, ...)
                 counter++;
                 i++;
             }
+            else if (format[i + 1] == '\0')
+            {
+                _putchar('%');
+                counter++;
+            }
             else
             {
                 int (*f)(va_list) = check_format(&format[i + 1]);
                 if (f == NULL)
                 {
-                    _putchar(format[i++]);
+                    _putchar(format[i]);
                     counter++;
                 }
                 else
