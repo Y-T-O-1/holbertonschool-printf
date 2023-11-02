@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == '\0')
 		{
-			return (0);
+			return (NULL);
 		}
 		else
 		{
@@ -60,7 +60,8 @@ int _printf(const char *format, ...)
 
 			if (f == NULL)
 			{
-				counter--;
+				_putchar(format[i]);
+				counter++;
 			}
 			else
 			{
