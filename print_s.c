@@ -6,7 +6,7 @@
  * @s: Arguments
  *
  * @Return: Number of char printed
- **/ 
+ **/
 int print_s(va_list s)
 {
 	/* Set our perameters */
