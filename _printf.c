@@ -47,12 +47,8 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 			counter++;
-		}
-		else if (format[i + 1] == '%')
-		{
-			_putchar('%');
-			counter++;
-			i++;
+			if (format[i] == '%' && format[i + 1] == '%')
+				i++;
 		}
 		else if (format[i + 1] == '\0')
 		{
@@ -61,6 +57,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			int (*f)(va_list) = check_format(&format[i + 1]);
+
 			if (f == NULL)
 			{
 				_putchar(format[i]);
