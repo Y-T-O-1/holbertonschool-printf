@@ -2,14 +2,13 @@
 #include <unistd.h>
 
 /**
- * print_s - prints a string
- * @s: argument list
- * @Return: Counter
+ * print_s - Prints string
+ * @s: Arguments
+ * @Return: String
 */
 
 int print_s(va_list s)
 {
-	/* Set our parameters*/
 	char *str = va_arg(s, char *);
 	int i = 0;
 
