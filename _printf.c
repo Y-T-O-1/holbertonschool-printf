@@ -26,7 +26,7 @@ int (*check_format(const char *format))(va_list)
     return (NULL);
 }
 
-int handle_format(const char **format, va_list ap, int *index)
+int handle_format(const char *format, va_list ap, int *index)
 {
     return 0;
 }
