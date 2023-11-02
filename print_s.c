@@ -4,7 +4,7 @@
 /**
  * print_s - prints a string
  * @s: argument list
- * @Return: Always 1 (Unless it's not)
+ * @Return: Number of characters printed
 */
 
 int print_s(va_list s)
