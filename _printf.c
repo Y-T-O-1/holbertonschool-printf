@@ -60,7 +60,7 @@ int _printf(const char *format, ...)
 			else
 			{
 f = check_format(&format[i + 1]); /* Checks for specifier */
-    if (f == NULL)
+if (f == NULL)
 return (-1);
 				i += 2;
 				counter += f(ap);
