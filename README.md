@@ -61,7 +61,6 @@ int main(void) {
 
 
 </details>
-
 ### _putchar.c
 <details>
 <summary>Program Info</summary>
@@ -93,8 +92,43 @@ int main(void) {
     return 0;
 }
 ```
+</details>
+
+### print_c
+<details>
+<summary>Program Info</summary>
+
+## Program Description
+
+This program is responsible for handling character conversion (%c) in our custom _printf() function implementation. It's designed to print a single character passed to the _printf() function when it encounters the %c format specifier.
+
+## Function Description
+
+#### int print_c(va_list c)
+A function that prints a single character.
+* @c: A va_list argument that points to the character to be printed.
+* Returns: Always 1 upon successful printing.
+
+### Usage 
+
+To use print_c within the _printf() function, include main.h and simply pass a character to _printf() with the %c format specifier. The print_c function will be called internally to print the character.
+
+```c
+#include "main.h"
+
+int main(void)
+{
+    _printf("Character: %c\n", 'A');
+    return 0;
+}
+
+```
 
 </details>
+
+
+
+
 
 
 
