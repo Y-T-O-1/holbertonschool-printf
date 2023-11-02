@@ -20,7 +20,7 @@ int i;
 for (i = 0; p[i].t != NULL; i++)
 {
 if (*(p[i].t) == *format)
-return p[i].f;
+return (p[i].f);
 }
 
 return (NULL);
@@ -44,38 +44,38 @@ va_start(ap, format);
 
 for (i = 0; format[i]; i++)
 {
-if (format[i] != '%')
+    if (format[i] != '%')
+    {
+         _putchar(format[i]);
+        counter++;
+    }
+    else
+    {
+        if (format[i + 1] == '%')
         {
-            _putchar(format[i]);
+            _putchar('%');
             counter++;
+            i++;
+        }
+        else if (format[i + 1] == '\0')
+        {
+            return (0);
         }
         else
         {
-            if (format[i + 1] == '%')
+            int (*f)(va_list) = check_format(&format[i + 1]);
+            if (f == NULL)
             {
-                _putchar('%');
+                _putchar(format[i]);
                 counter++;
-                i++;
-            }
-            else if (format[i + 1] == '\0')
-            {
-                return (0);
             }
             else
             {
-                int (*f)(va_list) = check_format(&format[i + 1]);
-                if (f == NULL)
-                {
-                    _putchar(format[i]);
-                    counter++;
-                }
-                else
-                {
-                    counter += f(ap);
-                    i++;
-                }
+                counter += f(ap);
+                i++;
             }
         }
+    }
     }
 
     va_end(ap);
