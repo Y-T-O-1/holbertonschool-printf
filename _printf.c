@@ -63,20 +63,6 @@ int _printf(const char *format, ...)
                     _putchar(format[i]);
                     counter++;
                 }
-                else if (format[i + 1] == 's')
-                {
-                    char *s = va_arg(ap, char *);
-                    int length = strlen(s);
-                    if (length == 1 && s[0] == '%')
-                    {
-                        return (NULL);
-                    }
-                    else
-                    {
-                        counter += f(ap);
-                        i++;
-                    }
-                }
                 else
                 {
                     counter += f(ap);
