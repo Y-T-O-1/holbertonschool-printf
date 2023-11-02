@@ -39,7 +39,6 @@ int handle_format(const char *format, va_list ap, unsigned int *i)
 
 	if (f == NULL) 
 	{  /* Unrecognized format specifier */
-		_putchar('%');
 		if (format[1] != '\0')
 		{
 			_putchar(format[1]);
