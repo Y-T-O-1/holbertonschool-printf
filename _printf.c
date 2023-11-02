@@ -6,7 +6,6 @@
  * @format: possible valid format specifier
  * Return: pointer to valid function or NULL
 */
-
 int (*check_format(const char *format))(va_list)
 {
 int i = 0; /* Initiliazes an array of print_t structures */
@@ -18,7 +17,7 @@ print_t p[] = {
 };
 
 for (; p[i].t != NULL; i++) /* t = pointer to char(string) */
-    {
+{
 	if (*(p[i].t) == *format)
 		break;
 	}
@@ -30,7 +29,6 @@ for (; p[i].t != NULL; i++) /* t = pointer to char(string) */
  * @format: a string
  * Return:
 */
-
 int _printf(const char *format, ...)
 {
 	va_list ap; /* Used to acces variable arguments */
@@ -61,7 +59,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-                f = check_format(&format[i + 1]); /* Checks char for specifier */
+f = check_format(&format[i + 1]); /* Checks for specifier */
 if (f == NULL)
                 return (-1);
 				i += 2;
