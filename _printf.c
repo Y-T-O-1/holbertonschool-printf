@@ -9,16 +9,16 @@
 
 int (*check_format(const char *format))(va_list)
 {
-int i = 0;
-/* Initiliazes an array of print_t structures */
+int i = 0; /* Initiliazes an array of print_t structures */
 print_t p[] = {
-    {"c", print_c},
-    {"s", print_s},
-    {"percent", print_percent},
-    {NULL, NULL}
+{"c", print_c},
+{"s", print_s},
+{"percent", print_percent},
+{NULL, NULL}
 };
 
-for (; p[i].t != NULL; i++) { /* t = pointer to char(string) */
+for (; p[i].t != NULL; i++) /* t = pointer to char(string) */
+    {
 	if (*(p[i].t) == *format)
 		break;
 	}
@@ -61,9 +61,8 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				f = check_format(&format[i + 1]); 
-                /* Checks char for valid format specifier */
-				if (f == NULL)
+                f = check_format(&format[i + 1]); /* Checks char for specifier */
+if (f == NULL)
                 return (-1);
 				i += 2;
 				counter += f(ap);
