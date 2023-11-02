@@ -27,45 +27,6 @@ int (*check_format(const char *format))(va_list)
 }
 
 /**
- * handle_format - Handles format specifiers or prints unrecognized ones
- * @format: Format specifier
- * Return: the counter for the format.
-*/
-
-int handle_format(const char *format, va_list ap, unsigned int *i) 
-{
-	int counter = 0;
-	int (*f)(va_list) = check_format(format + 1);
-
-	if (f == NULL) 
-	{  /* Unrecognized format specifier */
-		if (format[1] != '\0')
-		{
-            if (format[1] == '%')
-            {
-                (*i)++; /* Skip over the '%' */
-            }
-            else
-            {
-                _putchar(format[1]);
-                counter++;
-                (*i) += 2; 
-            } 
-		}
-		else
-		{
-			return (-1);
-		}
-	}
-	else
-	{  /* Valid format specifier */
-		counter += f(ap);
-		(*i) += 2;  /* Skip over the '%' and the format specifier */
-	}
-	return counter;
-}
-
-/**
  * _printf - Function that mimics printf
  * @format: a string
  * Return: number of characters printed
@@ -95,20 +56,6 @@ int _printf(const char *format, ...)
                 _putchar('%');
                 counter++;
                 i++;
-            }
-            else
-            {
-                int (*f)(va_list) = check_format(&format[i + 1]);
-                if (f == NULL)
-                {
-                    _putchar(format[i]);
-                    counter++;
-                }
-                else
-                {
-                    counter += f(ap);
-                    i++;
-                }
             }
         }
     }
