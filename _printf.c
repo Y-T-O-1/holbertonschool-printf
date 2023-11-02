@@ -16,7 +16,7 @@ int (*check_format(const char *format))(va_list)
     };
 
     int i;
-    
+
     for (i = 0; p[i].t != NULL; i++)
     {
         if (*(p[i].t) == *format)
