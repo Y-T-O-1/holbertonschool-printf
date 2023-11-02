@@ -12,7 +12,7 @@ int i = 0; /* Initiliazes an array of print_t structures */
 print_t p[] = {
 {"c", print_c},
 {"s", print_s},
-{"percent", print_percent},
+{"%", print_percent},
 {NULL, NULL}
 };
 
