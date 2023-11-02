@@ -47,23 +47,11 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 			counter++;
-			if (format[i] == '%' && format[i + 1] == '%')
-				i++;
 		}
-		else if (format[i + 1] == '\0')
-		{
-			return (0);
-		}
-		else
+		else if (format[i + 1] != '%')
 		{
 			int (*f)(va_list) = check_format(&format[i + 1]);
-
-			if (f == NULL)
-			{
-				_putchar(format[i]);
-				counter++;
-			}
-			else
+			if (f != NULL)
 			{
 				counter += f(ap);
 				i++;
@@ -74,4 +62,5 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	return (counter);
 }
+
 
