@@ -79,18 +79,6 @@ int _printf(const char *format, ...)
                     i++;
                     hasNonPercentChar = true;
                 }
-                while (format && format[i]) 
-                {
-                    if (format[i] == '%' && format[i + 1] != '\0')
-                    {
-                        counter += handle_format(&format[i], ap, &i);
-                    }
-                    else
-                    {
-                        _putchar(format[i++]);
-                        counter++;
-                    }
-                }
             }
         }
     }
