@@ -9,21 +9,21 @@
 
 int (*check_format(const char *format))(va_list)
 {
-    print_t p[] = {
-        {"c", print_c},
-        {"s", print_s},
-        {"%", print_percent},
-        {NULL, NULL}
-    };
+print_t p[] = {
+{"c", print_c},
+{"s", print_s},
+{"%", print_percent},
+{NULL, NULL}
+};
 
-    int i;
-    for (i = 0; p[i].t != NULL; i++)
-    {
-        if (*(p[i].t) == *format)
-            return p[i].f;
-    }
+int i;
+for (i = 0; p[i].t != NULL; i++)
+{
+if (*(p[i].t) == *format)
+return p[i].f;
+}
 
-    return (NULL);
+return (NULL);
 }
 
 /**
@@ -34,17 +34,17 @@ int (*check_format(const char *format))(va_list)
 
 int _printf(const char *format, ...)
 {
-    va_list ap;
-    int i, counter = 0;
+va_list ap;
+int i, counter = 0;
 
-    if (format == NULL)
-        return (-1);
+if (format == NULL)
+return (-1);
 
-    va_start(ap, format);
+va_start(ap, format);
 
-    for (i = 0; format[i]; i++)
-    {
-        if (format[i] != '%')
+for (i = 0; format[i]; i++)
+{
+if (format[i] != '%')
         {
             _putchar(format[i]);
             counter++;
