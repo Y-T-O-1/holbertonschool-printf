@@ -52,8 +52,7 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i + 1] == '\0')
 		{
-			va_end(ap);
-			return (counter);
+			return (0);
 		}
 		else
 		{
