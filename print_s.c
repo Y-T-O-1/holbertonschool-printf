@@ -2,11 +2,11 @@
 #include <unistd.h>
 
 /**
-* print_s - Prints string
-* @s: Arguments
-*
-* @Return: Number of char printed
-*/
+ * print_s - Prints string
+ * @s: Arguments
+ *
+ * @Return: Number of char printed
+ **/ 
 int print_s(va_list s)
 {
 	/* Set our perameters */
