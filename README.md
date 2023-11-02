@@ -27,20 +27,23 @@ The _printf() function can handle the following conversion specifiers:
 #### _printf.c
 <details>
 <summary>Click Me</summary>
-Function Descriptions
 
-int (*check_format(const char *format))(va_list)
+## Function Descriptions
+
+#### int (*check_format(const char *format))(va_list)
 This function pointer is used to select the correct printing function based on the format specifier provided.
 
-@format: The string containing potential format specifiers following a %.
-Return: A pointer to the function that corresponds to the format specifier, or NULL if the specifier is invalid.
-int _printf(const char *format, ...)
+* format: The string containing potential format specifiers following a %.
+* Return: A pointer to the function that corresponds to the format specifier, or NULL if the specifier is invalid.
+
+#### int _printf(const char *format, ...)
 This is the main function that mimics the standard printf() behavior.
 
-@format: The format string that contains the text to be written to stdout. It can optionally contain embedded format specifiers that are replaced by the values specified in subsequent additional arguments.
-Return: The number of characters printed (excluding the null byte used to end output to strings).
+* format: The format string that contains the text to be written to stdout. It can optionally contain embedded format specifiers that are replaced by the values specified in subsequent additional arguments.
+* Return: The number of characters printed (excluding the null byte used to end output to strings).
 
 </details>
+
 
 
 
