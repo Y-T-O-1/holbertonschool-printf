@@ -10,11 +10,8 @@
 int (*check_format(const char *format))(va_list)
 {
     int i = 0;
-
     /* Initiliazes an array of print_t structures */
-
-	print_t p[] =
-    {
+    print_t p[] = {
         {"c", print_c},
         {"s", print_s},
         {"percent", print_percent},
