@@ -12,7 +12,6 @@ int (*check_format(const char *format))(va_list)
         {"c", print_c},
         {"s", print_s},
         {"%", print_percent},
-        {"K", print_K},
         {NULL, NULL}
     };
 
@@ -53,12 +52,6 @@ int _printf(const char *format, ...)
             if (format[i + 1] == '%')
             {
                 _putchar('%');
-                counter++;
-                i++;
-            }
-            else if (format[i + 1] == '!')
-            {
-                _putchar('!');
                 counter++;
                 i++;
             }
