@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
     bool hasNonPercentChar = false;
 
     if (format == NULL)
-        return -1;
+        return NULL;
 
     va_start(ap, format);
 
@@ -83,7 +83,7 @@ int _printf(const char *format, ...)
     if (!hasNonPercentChar)
         return (NULL);
 
-    return counter;
+    return (counter);
 }
 
 
