@@ -20,7 +20,6 @@ int (*f)(va_list);
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int (*check_format(const char *format))(va_list)
 int print_s(va_list s);
 int print_c(va_list c);
 int print_percent(va_list percent);
