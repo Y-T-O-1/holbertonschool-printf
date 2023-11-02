@@ -57,6 +57,20 @@ int _printf(const char *format, ...)
                 counter++;
                 i++;
             }
+            else
+            {
+                int (*f)(va_list) = check_format(&format[i + 1]);
+                if (f == NULL)
+                {
+                    _putchar(format[i]);
+                    counter++;
+                }
+                else
+                {
+                    counter += f(ap);
+                    i++;
+                }
+            }
         }
     }
 
