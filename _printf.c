@@ -81,7 +81,7 @@ int _printf(const char *format, ...)
     va_end(ap);
 
     if (!hasNonPercentChar)
-        return (-1);
+        return (0);
 
     return counter;
 }
