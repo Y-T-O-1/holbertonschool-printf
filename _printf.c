@@ -32,11 +32,11 @@ int (*check_format(const char *format))(va_list)
  */
 int _printf(const char *format, ...)
 {
-    if (format == NULL)
-        return -1;
-
     va_list ap;
     int i, counter = 0;
+
+    if (format == NULL)
+        return -1;
 
     va_start(ap, format);
 
@@ -70,5 +70,6 @@ int _printf(const char *format, ...)
     va_end(ap);
     return counter;
 }
+
 
 
