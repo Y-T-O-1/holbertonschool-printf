@@ -4,3 +4,6 @@ a.out
 checker.c
 test.c
 testfile.c
+dtest.c
+itest.c
+.vscode/settings.json
