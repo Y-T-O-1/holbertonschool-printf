@@ -7,7 +7,7 @@
 
 
 ## Description
-This Project was a mini-recreation of printf. 
+This Project was a mini-recreation of printf, it can handle Characters, Strings, decimals, integers and more. It is not meant to be used as a full replacement to the printf function. 
 
 
 
@@ -18,8 +18,19 @@ The _printf() function can handle the following conversion specifiers:
 * %c: Characters
 * %s: Strings
 * %%: Percent sign
+* %d: decimal(s)
+* %i: Integer
 * Additional specifiers can be easily integrated by adding to the print_t array.
 * The function manages a variable number of arguments using the standard C stdarg.h library.
+
+* ## Flowchart
+
+### Description
+The Following flowchart is a basic representation of how this custom _printf function works. It's does not take into account all parameters that could be passed (See `man_3` for a detailed outline of this custom print_f program)
+
+
+<img width="668" alt="image" src="https://github.com/Y-T-O-1/holbertonschool-printf/assets/38075349/a933535b-6492-47a5-98eb-bb7419f8e439">
+
 
 
 ## File List
@@ -296,12 +307,3 @@ In the above example, the `_printf` function will print a formatted string to th
 
 </details>
 
-
-
-## Flowchart
-
-### Description
-The Following flowchart is a basic representation of how this custom _printf function works. It's does not take into account all parameters that could be passed (See `man_3` for a detailed outline of this custom print_f program)
-
-
-<img width="668" alt="image" src="https://github.com/Y-T-O-1/holbertonschool-printf/assets/38075349/a933535b-6492-47a5-98eb-bb7419f8e439">
