@@ -205,3 +205,94 @@ _printf("Hello, %s\n", "World");
 In the example provided, `_printf` will process the format string, detect the `%s` specifier, and internally call `print_s` to output the string "Hello, World" to the standard output.
 
 </details>
+
+
+# main.h
+<details>
+<summary>Program Info</summary>
+
+This header file defines the interface for a custom `_printf` function, which is designed to mimic the standard `printf` function from the C standard library. It includes prototypes for the `_printf` function and various helper functions that handle specific format specifiers, as well as the definition for the `print_t` structure used for associating format specifiers with their corresponding print functions.
+
+## Struct `print`
+
+<details>
+<summary>Struct Info</summary>
+
+### Struct Description
+
+The `print` struct, also referred to as `print_t`, serves as a map to associate a format specifier (such as `%s`, `%c`, or `%d`) with a function designed to handle printing that type. It is used by the `_printf` function to find and call the appropriate function when a format specifier is encountered in a format string.
+
+### Struct Definition
+
+```c
+typedef struct print
+{
+    char *t;               /* Type to print */
+    int (*f)(va_list);     /* Function to print */
+} print_t;
+```
+
+* `t`: A string that represents a format specifier.
+* `f`: A function pointer to the handler function for the corresponding format specifier.
+
+</details>
+
+## Function Prototypes
+
+<details>
+<summary>Function Info</summary>
+
+### Function Descriptions
+
+#### `int _printf(const char *format, ...)`
+* A custom implementation of the standard `printf` function.
+* `format`: A string that contains characters and format specifiers to be printed or converted.
+* Returns: The total number of characters printed.
+
+#### `int _putchar(char c)`
+* Writes a single character to stdout.
+* `c`: The character to print.
+* Returns: `1` on success, `-1` on error.
+
+#### `int print_s(va_list s)`
+* Prints a string.
+* `s`: A `va_list` argument pointing to the string to print.
+* Returns: The number of characters printed.
+
+#### `int print_c(va_list c)`
+* Prints a character.
+* `c`: A `va_list` argument pointing to the character to print.
+* Returns: `1` since it prints one character.
+
+#### `int print_d(va_list arg)`
+* Prints an integer in decimal format.
+* `arg`: A `va_list` argument pointing to the integer to print.
+* Returns: The number of digits printed.
+
+#### `int print_percent(va_list percent)`
+* Prints a percent sign.
+* `percent`: Unused but included for compatibility with the function prototype.
+* Returns: `1` as it prints one character.
+
+</details>
+
+## Usage
+
+This header file should be included in C files where the custom `_printf` function and its related helper functions are used. Include it using the preprocessor directive `#include "main.h"` at the beginning of your C files.
+
+### Example
+
+```c
+#include "main.h"
+
+int main(void) {
+    _printf("String: %s, Character: %c, Percent: %%\n", "Hello", 'A');
+    return 0;
+}
+```
+
+In the above example, the `_printf` function will print a formatted string to the standard output, using the provided arguments and corresponding format specifiers defined in `main.h`.
+```
+
+</details>
+
