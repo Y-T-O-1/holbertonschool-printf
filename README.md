@@ -179,7 +179,29 @@ In this usage example, `_printf` will parse the format string, recognize the `%d
 
 </details>
 
+### `print_s`
 
+<details>
+<summary>Program Info</summary>
 
+## Program Description
 
+The `print_s` function is a custom utility designed to be used within the `_printf()` function to print a string. When `_printf()` encounters a `%s` format specifier, `print_s` is called to handle the conversion and output of the string to the standard output.
 
+## Function Description
+
+#### `int print_s(va_list s)`
+* `s`: A `va_list` argument that represents a variadic argument list passed to `_printf()`. `print_s` specifically processes string arguments.
+* Returns: The total count of characters that have been printed to the standard output.
+
+### Usage
+
+`print_s` is called internally by the `_printf()` function when the `%s` format specifier is included in the format string. The function processes the argument as a string and prints it. It is not intended for direct usage in user code.
+
+```c
+_printf("Hello, %s\n", "World");
+```
+
+In the example provided, `_printf` will process the format string, detect the `%s` specifier, and internally call `print_s` to output the string "Hello, World" to the standard output.
+
+</details>
