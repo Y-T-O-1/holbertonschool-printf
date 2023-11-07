@@ -152,7 +152,32 @@ _printf("Display 100%% completed\n");
 
 </details>
 
+### `print_d`
 
+<details>
+<summary>Program Info</summary>
+
+## Program Description
+
+The `print_d` function is a custom implementation designed to extend the functionality of the `_printf()` function, allowing it to handle integer format specifiers. This function is tailored to convert an integer argument into its ASCII representation and output it to the standard output.
+
+## Function Description
+
+#### `int print_d(va_list arg)`
+* `arg`: A `va_list` argument that represents a variadic argument list passed to the `_printf()` function. `print_d` specifically processes integer arguments.
+* Returns: The total count of characters that have been printed to the standard output.
+
+### Usage
+
+`print_d` is internally invoked by the `_printf()` function when an integer format specifier (`%d` or `%i`) is detected within the format string. It is not meant to be called directly by the user, but is integrated into the `_printf()` to process and print integer values.
+
+```c
+_printf("The value is: %d\n", 42);
+```
+
+In this usage example, `_printf` will parse the format string, recognize the `%d` specifier, and internally call `print_d` to print `The value is: 42` to the standard output.
+
+</details>
 
 
 
