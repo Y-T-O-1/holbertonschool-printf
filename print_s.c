@@ -19,7 +19,7 @@ int print_s(va_list s)
 		str = "(null)";
 	}
 
-	/* Loop through the string and print each character until the null-terminator is encountered */
+	/* Loop through the string and print each character until done */
 	while (str[i])
 	{
 		/* Print current character and increment the print counter */
