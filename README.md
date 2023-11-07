@@ -296,3 +296,12 @@ In the above example, the `_printf` function will print a formatted string to th
 
 </details>
 
+
+
+## Flowchart
+
+### Description
+The Following flowchart is a basic representation of how this custom _printf function works. It's does not take into account all parameters that could be passed (See `man_3` for a detailed outline of this custom print_f program)
+
+
+<img width="668" alt="image" src="https://github.com/Y-T-O-1/holbertonschool-printf/assets/38075349/a933535b-6492-47a5-98eb-bb7419f8e439">
